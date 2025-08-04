@@ -1,46 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    
-    <title>Live Player</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   
-    
-    <style type="text/css" media="screen" charset="utf-8">
-      #live-player {
-        position: fixed !important;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: black;
-      }
-      .dvr-player-wrapper {
-        background-color: black;
-      }
+    <link href="https://vjs.zencdn.net/7.1/video-js.min.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.1/video.min.js"></script>
+    <style>
+    #player {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
     </style>
-  <link href="https://moonlight.wideiptv.top/flu/player/main.b144fd41d286a094cb29.css" rel="stylesheet"><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/core-js.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/sentry.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/panzoom.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/clappr.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/flussonic.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/shaka-player.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/main.b144fd41d286a094cb29.js"></script>
   
-</head>
+  
+  </head>
   <body>
-    <div id="live-player"></div>
+      <video autoplay  id="player" class="video-js vjs-default-skin vjs-16-9"  controls >
+        <source src="https://video-auth1.iol.pt/beachcam/fontedatelha/playlist.m3u8" type="application/vnd.apple.mpegurl" />
+      </video>
+   
+  
+    <div hidden>
+     <video autoplay id="player2" class="video-js vjs-default-skin"  controls >
+        <source src="https://vsalema.github.io/tvpt4/css/ezyZip.mp3" type="audio/mpeg" />
+      </video></div>
+    
+    
+    
+    <script>
+    var options, video;
+ 
+    options = {
+      autoplay: true,
+      muted: false
+    };
+ 
+    video = videojs('player', options);
+ 
+  
+    function toggleMute() {
 
-    <script type="text/javascript">
-      window.onload = function() {
-        var options = {
-          parentId: '#live-player',
-          width: '100%',
-          height: '100%',
-        }
-        var config = {"streamName":"TF1FR","hasPreview":false,"authTokenName":"token","thumbnails_enabled":false,"type":"live","dvr_info":null,"protocols":{"hls":true,"dash":true,"webrtc":true,"mse":true,"mss":true,"cmaf":true}};
-        var params = LivePlayer.parseUrl(window.location.href, options, {"streamName":"TF1FR","hasPreview":false,"authTokenName":"token","thumbnails_enabled":false,"type":"live","dvr_info":null,"protocols":{"hls":true,"dash":true,"webrtc":true,"mse":true,"mss":true,"cmaf":true}});
-        window.LivePlayer = new LivePlayer(params);
-        document.getElementsByTagName('title')[0].innerHTML = config.streamName;
-      }
+var video=document.getElementById("player2")
+
+if(video.muted){
+	video.muted = false;
+} else {
+	video.muted = false;
+}
+
+}
     </script>
-  </body>
+ <script>
+    var options, video;
+ 
+    options = {
+      autoplay: true,
+      muted: false
+    };
+ 
+    video = videojs('player2', options);
+ 
+  </script>
+ </body>
 </html>
 
-
+  
+  
