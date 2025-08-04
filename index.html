@@ -1,24 +1,48 @@
 <!DOCTYPE html>
-<html lang='en' class=''>
-
-<head>
-
-  <meta charset='UTF-8'>
-  <title>tf1</title>
-
-  <meta name="robots" content="noindex">
-
- <style>
-   body {
-    margin: 0;
-}
- </style>
+<html>
+  <head>
+    <script language="javascript" type="text/javascript"> if(self==top) { top.location.href="index.php"; } </script>
+    <title>Live Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript"></script>
+    <script type='text/javascript' src='//isabellaentire.com/ef/eb/4a/efeb4a41518e0010d169951edeb841cc.js'></script>
+    <style type="text/css" media="screen" charset="utf-8">
+      #live-player {
+        position: fixed !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+      }
+      .dvr-player-wrapper {
+        background-color: black;
+      }
+    </style>
+  <link href="https://moonlight.wideiptv.top/flu/player/main.b144fd41d286a094cb29.css" rel="stylesheet"><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/core-js.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/sentry.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/panzoom.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/clappr.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/flussonic.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/shaka-player.b144fd41d286a094cb29.js"></script><script type="text/javascript" src="https://moonlight.wideiptv.top/flu/player/main.b144fd41d286a094cb29.js"></script>
+  <script type="text/javascript">
+    aclib.runPop({
+        zoneId: '8272754',
+    });
+</script>
 </head>
+  <body>
+    <div id="live-player"></div>
 
-<body>
-
- <iframe src="https://oqee.tv/home/channels/536/play" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0%;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
-  
-</body>
-
+    <script type="text/javascript">
+      window.onload = function() {
+        var options = {
+          parentId: '#live-player',
+          width: '100%',
+          height: '100%',
+        }
+        var config = {"streamName":"TF1FR","hasPreview":false,"authTokenName":"token","thumbnails_enabled":false,"type":"live","dvr_info":null,"protocols":{"hls":true,"dash":true,"webrtc":true,"mse":true,"mss":true,"cmaf":true}};
+        var params = LivePlayer.parseUrl(window.location.href, options, {"streamName":"TF1FR","hasPreview":false,"authTokenName":"token","thumbnails_enabled":false,"type":"live","dvr_info":null,"protocols":{"hls":true,"dash":true,"webrtc":true,"mse":true,"mss":true,"cmaf":true}});
+        window.LivePlayer = new LivePlayer(params);
+        document.getElementsByTagName('title')[0].innerHTML = config.streamName;
+      }
+    </script>
+  </body>
 </html>
