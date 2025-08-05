@@ -11,6 +11,10 @@
   min-width: 100%;
   min-height: 100%;
 }
+    .widget { 
+   position: relative;
+  top: 30px;
+   }
     </style>
   
   
@@ -25,9 +29,10 @@
      <video autoplay id="player2" class="video-js vjs-default-skin"  controls >
         <source src="https://vsalema.github.io/tvpt4/css/ezyZip.mp3" type="audio/mpeg" />
       </video></div>
-    
+    <div class="widget">
     <a class="weatherwidget-io" href="https://forecast7.com/fr/38d72n9d14/lisbon/" data-label_1="LISBONNE" data-label_2="METEO LIVE" data-font="Arial Black" data-icons="Climacons Animated" data-theme="pure" data-basecolor="transparent" >LISBONNE METEO LIVE</a>
-<script>
+</div>
+	    <script>
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
     
@@ -70,6 +75,7 @@ if(video.muted){
 
   
   
+
 
 
 
