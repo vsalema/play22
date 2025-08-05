@@ -27,7 +27,11 @@
   top: -150px;
    left: 32px;
       }
-    
+    .container {
+  display: flex; /* or inline-flex */
+flex-direction:  column;
+     
+      }
     </style>
   
   
@@ -42,13 +46,14 @@
      <video autoplay id="player2" class="video-js vjs-default-skin"  controls >
         <source src="https://vsalema.github.io/tvpt4/css/ezyZip.mp3" type="audio/mpeg" />
       </video></div>
-    <div class="widget">
+    <div class="container">
+	  <div class="widget">
     <a class="weatherwidget-io" href="https://forecast7.com/fr/38d72n9d14/lisbon/" data-label_1="LISBONNE" data-label_2="METEO LIVE" data-font="Arial Black" data-icons="Climacons Animated" data-theme="pure" data-basecolor="transparent" >LISBONNE METEO LIVE</a>
 
    <div class="thetimenow-embeddable-clock widget2" data-type="clock"  data-font-color="#3f3636"  data-background-color="transparent" data-font-size="20" data-location-type="country" data-location-id="104" >  </div>
 <script type="text/javascript" src="https://www.thetimenow.com/ttn-embed.min.j"></script> 
     
-    </div>
+    </div></div>
 	   
     
     
@@ -568,6 +573,7 @@ function theTimeNowRenderClocks() {
 
   
   
+
 
 
 
